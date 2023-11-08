@@ -51,6 +51,7 @@ class TestGoString(unittest.TestCase):
         self.new_string.remove_liberty(Point(0,2))
         #self.assertEqual(new_string.num_liberties, 2)
         self.assertEqual(self.new_string.num_liberties, 5)
+        self.new_string.add_liberty(Point(0,2))
 
     def test_add_liberty(self):
         '''
@@ -58,8 +59,10 @@ class TestGoString(unittest.TestCase):
         '''
         #1. create a string
         #2. add a liberty
-        #3. check the number of liberties
-        pass
+        self.new_string.add_liberty(Point(0,3))
+                #3. check the number of liberties
+        self.assertEqual(self.new_string.num_liberties, 7)
+        self.new_string.remove_liberty(Point(0,3))
 
     def test_occupied_points(self):
         '''
